@@ -1,38 +1,24 @@
-language: node_js
+sudo: required
+services:
+  - docker
 
-node_js:
-  - 10.15.1
-
-cache:
-  directories:
-    - node_modules
-
-branches:
-  only:
-    - master
-
-before_script:
-  - npm install
+before_install:
+  - docker build -t wp-client:prod .
 
 script:
-  - if [[ "$TRAVIS_BRANCH" = "master" ]]; then npm run build; else echo "not a build branch"; fi
-
-before_deploy:
-  - cd $TRAVIS_BUILD_DIR
-  - sed -i '/dist/d' .gitignore
-  - git add . && git commit -m "latest build"
+  docker run -e CI=true -d -p 80:80 wp-client:prod
 
 deploy:
-  - provider: elasticbeanstalk
-    region: "eu-central-1"
-    app: "wp-client"
-    env: "wp-client-esb"
-    bucket_name: "elasticbeanstalk-eu-central-1-447041063491"
-    bucket_path: "wp-client"
-    access_key_id: $AWS_ACCESS_KEY_ID
-    secret_access_key: $AWS_SECRET_ACCESS_KEY
-    on:
-      branch: master
+  provider: elasticbeanstalk
+  region: "eu-central-1"
+  app: "wp-client"
+  env: "wp-client-eb"
+  bucket_name: "elasticbeanstalk-eu-central-1-447041063491"
+  bucket_path: "docker-react"
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
+  on:
+    branch: master
 
 after_deploy:
   - echo "Applcation Deployed!"
