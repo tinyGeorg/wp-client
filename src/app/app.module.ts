@@ -24,9 +24,12 @@ import {
 library.add(faExternalLinkAlt, faPlus, faTimes, faDownload);
 
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { GalleryCategorySelectorComponent } from './gallery-category-selector/gallery-category-selector.component';
+import { SliderComponent } from './shared/components/slider/slider.component';
+import { SliderItemDirective } from './shared/components/slider/slider-item.directive';
 
 @NgModule({
-  declarations: [AppComponent, GalleryComponent],
+  declarations: [AppComponent, GalleryComponent, GalleryCategorySelectorComponent, SliderComponent, SliderItemDirective],
   imports: [
     BrowserModule,
     AppRoutingModule,
