@@ -1,5 +1,15 @@
-<div fxLayout="row" fxLayoutAlign="space-evenly center">
-  <div *ngFor="let image of images">
+<div fxLayout="row wrap" fxLayoutAlign="space-evenly start">
+  <div
+    *ngFor="let image of images; let i = index"
+    (click)="openModalViaService(1, i)"
+  >
     <img class="image" [src]="image.modal.img" />
   </div>
 </div>
+
+<ks-modal-gallery
+  [id]="1"
+  [modalImages]="images"
+  [currentImageConfig]="{ description: customDescriptionHideIfEmpty }"
+  [plainGalleryConfig]="hidePlainGallery"
+></ks-modal-gallery>
