@@ -69,7 +69,6 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
-              "baseHref": "https://tinyGeorg.github.io/wp-client/",
               "budgets": [
                 {
                   "type": "initial",
