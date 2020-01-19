@@ -1,9 +1,7 @@
 FROM node:alpine as builder
 WORKDIR '/app'
-COPY package.json .
-RUN npm install
-COPY . .
 RUN npm run build
+COPY . .
 # /app/build = static content for server
 
 FROM nginx

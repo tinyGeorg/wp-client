@@ -3,10 +3,10 @@ services:
   - docker
 
 before_install:
-  - docker build -t wp-client -f Dockerfile .
+  - docker build -t wp-client .
 
 script:
-  - docker run -e CI=true wp-client npm run build
+  - docker run -e CI=true wp-client
 
 deploy:
   provider: elasticbeanstalk
