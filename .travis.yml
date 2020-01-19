@@ -1,21 +1,33 @@
-sudo: required
-services:
-  - docker
+language: node_js
 
-before_install:
-  - docker build -t wp-client .
+node_js:
+  - 10.15.1
+
+cache:
+  directories:
+    - node_modules
+
+branches:
+  only:
+    - master
+
+before_script:
+  - npm install
 
 script:
-  - docker run -e CI=true wp-client npm run build
-
+  - if [[ "$TRAVIS_BRANCH" = "master" ]]; then npm run build; else echo "not a build branch"; fi
+  
 deploy:
-  provider: elasticbeanstalk
-  region: "eu-central-1"
-  app: "wp-client"
-  env: "wp-client-env"
-  bucket_name: "elasticbeanstalk-eu-central-1-447041063491"
-  bucket_path: "wp-client"
-  access_key_id: $AWS_ACCESS_KEY
-  secret_access_key: $AWS_SECRET_KEY
-  on:
-    branch: master
+  - provider: elasticbeanstalk
+    region: "eu-central-1"
+    app: "wp-client"
+    env: "wp-client-esb"
+    bucket_name: "elasticbeanstalk-eu-central-1-447041063491"
+    bucket_path: "wp-client"
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
+    on:
+      branch: master
+
+after_deploy:
+  - echo "Applcation Deployed!"
