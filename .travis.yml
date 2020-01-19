@@ -14,7 +14,7 @@ deploy:
   app: "wp-client"
   env: "wp-client-eb"
   bucket_name: "elasticbeanstalk-eu-central-1-447041063491"
-  bucket_path: "docker-react"
+  bucket_path: "wp-client"
   access_key_id: $AWS_ACCESS_KEY
   secret_access_key: $AWS_SECRET_KEY
   on:
