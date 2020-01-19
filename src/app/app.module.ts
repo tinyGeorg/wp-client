@@ -6,8 +6,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GalleryComponent } from './gallery/gallery.component';
 
-import { ModalGalleryComponent } from './modal-gallery/modal-gallery.component';
-
 // ********************** angular-modal-gallery *****************************
 import 'hammerjs'; // Mandatory for angular-modal-gallery 3.x.x or greater (`npm i --save hammerjs`)
 import 'mousetrap'; // Mandatory for angular-modal-gallery 3.x.x or greater (`npm i --save mousetrap`)
@@ -28,7 +26,7 @@ library.add(faExternalLinkAlt, faPlus, faTimes, faDownload);
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
-  declarations: [AppComponent, GalleryComponent, ModalGalleryComponent],
+  declarations: [AppComponent, GalleryComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

@@ -5,6 +5,11 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {
+    path: '',
+    redirectTo: 'gallery',
+    pathMatch: 'full'
+  },
+  {
     path: 'gallery',
     component: GalleryComponent,
     pathMatch: 'full'
