@@ -6,7 +6,8 @@ before_install:
   - docker build -t wp-client .
 
 script:
-  - docker run -e CI=true -d -p 80:80 wp-client
+  - echo "Test"
+  # - docker run -e CI=true -d -p 80:80 wp-client
 
 deploy:
   provider: elasticbeanstalk
