@@ -1,19 +1,16 @@
 # base image
-FROM node:12.2.0 as build
+FROM node:alpine as build
 
 # set working directory
-WORKDIR /app
-
-# add `/app/node_modules/.bin` to $PATH
-ENV PATH /app/node_modules/.bin:$PATH
+WORKDIR '/app'
 
 # install and cache app dependencies
-COPY package.json /app/package.json
+COPY package.json .
 RUN npm install
 RUN npm install -g @angular/cli@7.3.9
 
 # add app
-COPY . /app
+COPY . .
 
 # run tests
 # RUN ng test --watch=false
@@ -27,13 +24,13 @@ RUN ng build --prod --output-path=dist
 ############
 
 # base image
-FROM nginx:alpine
-
-# copy artifact build from the 'build environment'
-COPY --from=build /app/dist /usr/share/nginx/html
+FROM nginx
 
 # expose port 80
 EXPOSE 80
+
+# copy artifact build from the 'build environment'
+COPY --from=build /app/dist /usr/share/nginx/html
 
 # run nginx
 CMD ["nginx", "-g", "daemon off;"]
