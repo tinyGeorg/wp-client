@@ -1,3 +1,4 @@
+import { MaterialModule } from './material-module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -16,10 +17,10 @@ import { GalleryModule } from '@ks89/angular-modal-gallery'; // <---------------
 // to install use both `npm i --save @fortawesome/fontawesome-svg-core` and `npm i --save @fortawesome/free-solid-svg-icons`
 import { library, dom } from '@fortawesome/fontawesome-svg-core';
 import {
-  faExternalLinkAlt,
-  faPlus,
-  faTimes,
-  faDownload
+	faExternalLinkAlt,
+	faPlus,
+	faTimes,
+	faDownload
 } from '@fortawesome/free-solid-svg-icons';
 library.add(faExternalLinkAlt, faPlus, faTimes, faDownload);
 
@@ -27,17 +28,26 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { GalleryCategorySelectorComponent } from './gallery-category-selector/gallery-category-selector.component';
 import { SliderComponent } from './shared/components/slider/slider.component';
 import { SliderItemDirective } from './shared/components/slider/slider-item.directive';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
-  declarations: [AppComponent, GalleryComponent, GalleryCategorySelectorComponent, SliderComponent, SliderItemDirective],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    FlexLayoutModule,
-    GalleryModule.forRoot()
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+	declarations: [
+		AppComponent,
+		GalleryComponent,
+		GalleryCategorySelectorComponent,
+		SliderComponent,
+		SliderItemDirective,
+		HeaderComponent
+	],
+	imports: [
+		BrowserModule,
+		AppRoutingModule,
+		FormsModule,
+		FlexLayoutModule,
+		MaterialModule,
+		GalleryModule.forRoot()
+	],
+	providers: [],
+	bootstrap: [AppComponent]
 })
 export class AppModule {}

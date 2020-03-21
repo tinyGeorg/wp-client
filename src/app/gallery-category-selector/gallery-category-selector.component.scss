@@ -1,20 +1,25 @@
 .image {
   object-fit: cover;
-  height: 600px;
-  margin: 0;
+  height: 1000px;
 }
 
 @media (min-width: 1300px) {
   .image {
-    width: 25vw;
+    width: 33.3vw;
   }
 }
 
 @media (max-width: 1300px) {
   .image {
-    width: 33vw;
+    width: 50vw;
   }
 }
+
+@media (max-width: 900px) {
+    .image {
+      width: 100vw;
+    }
+  }
 
 .buttonOnImage {
   position: relative;
@@ -54,6 +59,7 @@
     padding: 12px 24px;
     border: solid 3px white;
     color: white;
+    font-weight: 400;
     font-size: 30px;
     cursor: pointer;
     border-radius: 5px;
