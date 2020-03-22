@@ -1,4 +1,3 @@
-import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -24,11 +23,14 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 library.add(faExternalLinkAlt, faPlus, faTimes, faDownload);
 
+import { MaterialModule } from './material-module';
+
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { GalleryCategorySelectorComponent } from './gallery-category-selector/gallery-category-selector.component';
 import { SliderComponent } from './shared/components/slider/slider.component';
 import { SliderItemDirective } from './shared/components/slider/slider-item.directive';
-import { HeaderComponent } from './header/header.component';
+import { HeaderComponent } from './shared/components/header/header.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
 	declarations: [
@@ -44,8 +46,9 @@ import { HeaderComponent } from './header/header.component';
 		AppRoutingModule,
 		FormsModule,
 		FlexLayoutModule,
-		MatToolbarModule,
-		GalleryModule.forRoot()
+		MaterialModule,
+		GalleryModule.forRoot(),
+		BrowserAnimationsModule
 	],
 	providers: [],
 	bootstrap: [AppComponent]

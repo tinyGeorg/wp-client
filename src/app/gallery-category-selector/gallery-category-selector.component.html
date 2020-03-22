@@ -1,80 +1,70 @@
-<app-slider>
-  <div class="buttonOnImage" appSliderItem>
-    <img
-      class="image"
-      src="https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg"
-    />
-    <div class="overlay">
-      <div class="center-content">
-        Nature
-        <br />
-        <button class="btn">More Photos</button>
-      </div>
-    </div>
-  </div>
-  <div class="buttonOnImage" appSliderItem>
-    <img
-      class="image"
-      src="https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg"
-    />
-    <div class="overlay">
-      <div class="center-content">
-        Nature
-        <br />
-        <button class="btn">More Photos</button>
-      </div>
-    </div>
-  </div>
-  <div class="buttonOnImage" appSliderItem>
-    <img
-      class="image"
-      src="https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg"
-    />
-    <div class="overlay">
-      <div class="center-content">
-        Nature
-        <br />
-        <button class="btn">More Photos</button>
-      </div>
-    </div>
-  </div>
-  <div class="buttonOnImage" appSliderItem>
-    <img
-      class="image"
-      src="https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg"
-    />
-    <div class="overlay">
-      <div class="center-content">
-        Nature
-        <br />
-        <button class="btn">More Photos</button>
-      </div>
-    </div>
-  </div>
-  <div class="buttonOnImage" appSliderItem>
-    <img
-      class="image"
-      src="https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg"
-    />
-    <div class="overlay">
-      <div class="center-content">
-        Nature
-        <br />
-        <button class="btn">More Photos</button>
-      </div>
-    </div>
-  </div>
-  <div class="buttonOnImage" appSliderItem>
-    <img
-      class="image"
-      src="https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg"
-    />
-    <div class="overlay">
-      <div class="center-content">
-        Nature
-        <br />
-        <button class="btn">More Photos</button>
-      </div>
-    </div>
-  </div>
-</app-slider>
+<div class="container">
+    <app-slider>
+        <div class="buttonOnImage" appSliderItem>
+          <img
+            class="image"
+            src="http://www.waldemar-popp.de/img/galerie/Eine-Seerose.jpg"
+          />
+          <div class="overlay">
+            <div class="center-content">
+              Nature
+              <br />
+              <button class="btn" (click)="goToGallery(-1)">More Photos</button>
+            </div>
+          </div>
+        </div>
+        <div class="buttonOnImage" appSliderItem>
+          <img
+            class="image"
+            src="http://www.waldemar-popp.de/img/galerie/Portrait-einer-Frau.jpg"
+          />
+          <div class="overlay">
+            <div class="center-content">
+              Portraits
+              <br />
+              <button class="btn" (click)="goToGallery(-1)">More Photos</button>
+            </div>
+          </div>
+        </div>
+        <div class="buttonOnImage" appSliderItem>
+          <img
+            class="image"
+            src="http://www.waldemar-popp.de/img/galerie/Akt-mit-Pferd.jpg"
+          />
+          <div class="overlay">
+            <div class="center-content">
+              Animals
+              <br />
+              <button class="btn" (click)="goToGallery(-1)">More Photos</button>
+            </div>
+          </div>
+        </div>
+        <div class="buttonOnImage" appSliderItem>
+          <img
+            class="image"
+            src="http://www.waldemar-popp.de/img/galerie/Gemeindezentrum-Assamstadt.jpg"
+          />
+          <div class="overlay">
+            <div class="center-content">
+              Regional
+              <br />
+              <button class="btn" (click)="goToGallery(-1)">More Photos</button>
+            </div>
+          </div>
+        </div>
+        <div class="buttonOnImage" appSliderItem>
+          <img
+            class="image"
+            src="http://www.waldemar-popp.de/img/galerie/Die-Sonnenblume.jpg"
+          />
+          <div class="overlay">
+            <div class="center-content">
+              To Sell
+              <br />
+              <button class="btn" (click)="goToGallery(-1)">More Photos</button>
+            </div>
+          </div>
+        </div>
+      </app-slider>
+      
+</div>

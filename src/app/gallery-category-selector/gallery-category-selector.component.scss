@@ -1,6 +1,6 @@
 .image {
   object-fit: cover;
-  height: 1000px;
+  height: 80vh;
 }
 
 @media (min-width: 1300px) {
@@ -54,7 +54,7 @@
   }
 
   .btn {
-    margin-top: 4px;
+    margin-top: 20px;
     background-color: transparent;
     padding: 12px 24px;
     border: solid 3px white;
@@ -71,3 +71,9 @@
     border: solid 3px white;
   }
 }
+
+.container {
+    height: 60vh;
+}
+
+
