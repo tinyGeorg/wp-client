@@ -1,4 +1,4 @@
-import { MaterialModule } from './material-module';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -44,7 +44,7 @@ import { HeaderComponent } from './header/header.component';
 		AppRoutingModule,
 		FormsModule,
 		FlexLayoutModule,
-		MaterialModule,
+		MatToolbarModule,
 		GalleryModule.forRoot()
 	],
 	providers: [],
