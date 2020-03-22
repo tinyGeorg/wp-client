@@ -2,8 +2,10 @@
   <div
     *ngFor="let image of images; let i = index"
     (click)="openModalViaService(1, i)"
+    class="modalOpenner"
   >
     <img class="image" [src]="image.modal.img" />
+    <div class="overlay"></div>
   </div>
 </div>
 
